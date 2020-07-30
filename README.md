@@ -1,4 +1,4 @@
-# SkoTutoring Mobile App using PhoneGap Desktop & PhoneGap Developer
+# SkoTutoring Mobile App using PhoneGap Desktop & PhoneGap Developer App
 SkoTutoring Mobile App as a Final Project for the 4ME305 - Web & Mobile Development course
 
 ## Usage
