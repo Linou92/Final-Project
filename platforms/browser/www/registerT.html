@@ -1,21 +1,19 @@
-<!DOCTYPE HTML>
-<html>
-
-<head>
-	<meta name="viewport" content="user-scalable=no, initial-scale=1, width=device-width">
- 
+<!-- 
+ * Created by Jayant Bramhankar (www.sahyadritechnologies.com) 
+ * Youtube Channel - https://www.youtube.com/channel/UCPSeFaxM6ni_HGpfkb3Kwbw;
+ * License - Free to use -->
+ <!DOCTYPE html>
+ <html>
+ <head>
+     <meta name="viewport" content="user-scalable=no, initial-scale=1, width=device-width">
      <title>Register</title>
      <link rel="stylesheet" type="text/css" href="css/fontawesome/css/all.min.css">
      <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
      <link rel="stylesheet" type="text/css" href="css/style.css">
-	<script type="text/javascript" src="js/jquery-1.7.min.js"></script>
-	<script type="text/javascript" charset="utf-8" src="js/phonegap-1.2.0.js"></script>
-	<script src="jquery.mobile/jquery.mobile-1.0rc2.js"></script>
-	<script type="text/javascript" charset="utf-8" src="js/main.js"></script>
-</head>
+     <link rel="stylesheet" href="css/owl.carousel.min.css">
+ </head>
 
-
-<body onload="init()">
+<body>
      <div class="container">
         <div class="registerPage">
              
@@ -26,111 +24,111 @@
              
             <h1><center> Register as a teacher</center></h1>
                   
-                <div data-role="content">	
+                <div data-role="content">   
 
-					<form id="registerForm">
-						<div data-role="fieldcontain" class="ui-hide-label">
-							<strong><label for="username" >Username:</label></strong>
-							<input type="text" name="username" id="username" value="" placeholder="Username" />
-						</div>
+                    <form id="registerForm">
+                        <div data-role="fieldcontain" class="ui-hide-label">
+                            <strong><label for="username" >Username:</label></strong>
+                            <input type="text" name="username" id="username" value="" placeholder="Username" />
+                        </div>
 
-						<div data-role="fieldcontain" class="ui-hide-label">
-							<strong><label for="password">Password:</label></strong>
-							<input type="password" name="password" id="password" value="" placeholder="Password" />
-						</div>
+                        <div data-role="fieldcontain" class="ui-hide-label">
+                            <strong><label for="password">Password:</label></strong>
+                            <input type="password" name="password" id="password" value="" placeholder="Password" />
+                        </div>
 
-						<div data-role="fieldcontain" class="ui-hide-label">
-							<strong><label for="passwordConf">Confirm password:</label></strong>
-							<input type="password" name="passwordConf" id="passwordConf" value="" placeholder="Confirm password" />
-						</div>
+                        <div data-role="fieldcontain" class="ui-hide-label">
+                            <strong><label for="passwordConf">Confirm password:</label></strong>
+                            <input type="password" name="passwordConf" id="passwordConf" value="" placeholder="Confirm password" />
+                        </div>
 
-						<div data-role="fieldcontain" class="ui-hide-label">
-							<strong>Select your speaking languages:</strong><br>
-							<input type="checkbox" id="english" name="check" value="English">
-						  <label for="english"> English</label><br>
-						  <input type="checkbox" id="french" name="check" value="French">
-						  <label for="french"> French</label><br>
-						  <input type="checkbox" id="spanish" name="check" value="Spanish">
-						  <label for="spanish"> Spanish</label><br>
-						  <input type="checkbox" id="german" name="check" value="German">
-						  <label for="german"> German</label><br>
-						  <input type="checkbox" id="swedish" name="check" value="Swedish">
-						  <label for="swedish"> Swedish</label><br>
-						  <input type="checkbox" id="arabic" name="check" value="Arabic">
-						  <label for="arabic"> Arabic</label><br>
-						  <input type="checkbox" id="italian" name="check" value="Italian">
-						  <label for="italian"> Italian</label><br>
-						</div>
+                        <div data-role="fieldcontain" class="ui-hide-label">
+                            <strong>Select your speaking languages:</strong><br>
+                            <input type="checkbox" id="english" name="check" value="English">
+                          <label for="english"> English</label><br>
+                          <input type="checkbox" id="french" name="check" value="French">
+                          <label for="french"> French</label><br>
+                          <input type="checkbox" id="spanish" name="check" value="Spanish">
+                          <label for="spanish"> Spanish</label><br>
+                          <input type="checkbox" id="german" name="check" value="German">
+                          <label for="german"> German</label><br>
+                          <input type="checkbox" id="swedish" name="check" value="Swedish">
+                          <label for="swedish"> Swedish</label><br>
+                          <input type="checkbox" id="arabic" name="check" value="Arabic">
+                          <label for="arabic"> Arabic</label><br>
+                          <input type="checkbox" id="italian" name="check" value="Italian">
+                          <label for="italian"> Italian</label><br>
+                        </div>
 
-						<div data-role="fieldcontain" class="ui-hide-label">
-								<strong>Select your teaching subjects:</strong><br>
-								<input type="checkbox" id="math" name="math" value="Math">
-							  <label for="math"> Math</label><br>
-							  <input type="checkbox" id="physics" name="physics" value="Physics">
-							  <label for="physics"> Physics</label><br>
-							  <input type="checkbox" id="chemistry" name="chemistry" value="Chemistry">
-							  <label for="chemistry"> Chemistry</label><br>
-							  <input type="checkbox" id="history" name="history" value="History">
-							  <label for="history"> History</label><br>
-							  <input type="checkbox" id="geography" name="geography" value="Geography">
-							  <label for="geography"> Geography</label><br>
-							  <input type="checkbox" id="biology" name="biology" value="Biology">
-							  <label for="biology"> Biology</label><br>
-							  <input type="checkbox" id="phylosophy" name="phylosophy" value="Phylosophy">
-							  <label for="phylosophy"> Philosophy</label><br>
-							  <input type="checkbox" id="english1" name="english1" value="English">
-							  <label for="english"> English</label><br>
-							  <input type="checkbox" id="french1" name="french1" value="French">
-							  <label for="french"> French</label><br>
-							  <input type="checkbox" id="spanish1" name="spanish1" value="Spanish">
-							  <label for="spanish"> Spanish</label><br>
-							  <input type="checkbox" id="german1" name="german1" value="German">
-							  <label for="german"> German</label><br>
-							  <input type="checkbox" id="swedish1" name="swedish1" value="Swedish">
-							  <label for="swedish"> Swedish</label><br>
-							  <input type="checkbox" id="arabic1" name="arabic1" value="Arabic">
-							  <label for="arabic"> Arabic</label><br>
-							  <input type="checkbox" id="italian1" name="italian1" value="Italian">
-							  <label for="italian"> Italian</label><br>
-							</div>
+                        <div data-role="fieldcontain" class="ui-hide-label">
+                                <strong>Select your teaching subjects:</strong><br>
+                                <input type="checkbox" id="math" name="math" value="Math">
+                              <label for="math"> Math</label><br>
+                              <input type="checkbox" id="physics" name="physics" value="Physics">
+                              <label for="physics"> Physics</label><br>
+                              <input type="checkbox" id="chemistry" name="chemistry" value="Chemistry">
+                              <label for="chemistry"> Chemistry</label><br>
+                              <input type="checkbox" id="history" name="history" value="History">
+                              <label for="history"> History</label><br>
+                              <input type="checkbox" id="geography" name="geography" value="Geography">
+                              <label for="geography"> Geography</label><br>
+                              <input type="checkbox" id="biology" name="biology" value="Biology">
+                              <label for="biology"> Biology</label><br>
+                              <input type="checkbox" id="phylosophy" name="phylosophy" value="Phylosophy">
+                              <label for="phylosophy"> Philosophy</label><br>
+                              <input type="checkbox" id="english1" name="english1" value="English">
+                              <label for="english"> English</label><br>
+                              <input type="checkbox" id="french1" name="french1" value="French">
+                              <label for="french"> French</label><br>
+                              <input type="checkbox" id="spanish1" name="spanish1" value="Spanish">
+                              <label for="spanish"> Spanish</label><br>
+                              <input type="checkbox" id="german1" name="german1" value="German">
+                              <label for="german"> German</label><br>
+                              <input type="checkbox" id="swedish1" name="swedish1" value="Swedish">
+                              <label for="swedish"> Swedish</label><br>
+                              <input type="checkbox" id="arabic1" name="arabic1" value="Arabic">
+                              <label for="arabic"> Arabic</label><br>
+                              <input type="checkbox" id="italian1" name="italian1" value="Italian">
+                              <label for="italian"> Italian</label><br>
+                            </div>
 
-							<div data-role="fieldcontain" class="ui-hide-label">
-								<strong>Select your teaching level:</strong><br>
-								<input type="checkbox" id="ten" name="ten" value="Ten">
-							  <label for="ten"> 10th grade</label><br>
-							  <input type="checkbox" id="eleven" name="eleven" value="Eleven">
-							  <label for="eleven"> 11th grade</label><br>
-							  <input type="checkbox" id="twelve" name="twelve" value="twelve">
-							  <label for="twelve"> 12th grade</label><br>
-							</div>
+                            <div data-role="fieldcontain" class="ui-hide-label">
+                                <strong>Select your teaching level:</strong><br>
+                                <input type="checkbox" id="ten" name="ten" value="Ten">
+                              <label for="ten"> 10th grade</label><br>
+                              <input type="checkbox" id="eleven" name="eleven" value="Eleven">
+                              <label for="eleven"> 11th grade</label><br>
+                              <input type="checkbox" id="twelve" name="twelve" value="twelve">
+                              <label for="twelve"> 12th grade</label><br>
+                            </div>
 
 
-							<div data-role="fieldcontain" class="ui-hide-label">
-								<strong>Select your availability:</strong><br>
-								<input type="checkbox" id="case1" name="case1" value="8-10">
-							  <label for="8-10"> 8h - 10h</label><br>
-							  <input type="checkbox" id="case2" name="case2" value="10-12">
-							  <label for="10-12"> 10h - 12h</label><br>
-							  <input type="checkbox" id="case3" name="case3" value="14-16">
-							  <label for="14-16"> 14h - 16h</label><br>
-							  <input type="checkbox" id="case4" name="case4" value="16-18">
-							  <label for="16-18"> 16h - 18h</label><br>
-							  <input type="checkbox" id="case5" name="case5" value="18-20">
-							  <label for="18-20"> 18h - 20h</label><br>
-							</div>
+                            <div data-role="fieldcontain" class="ui-hide-label">
+                                <strong>Select your availability:</strong><br>
+                                <input type="checkbox" id="case1" name="case1" value="8-10">
+                              <label for="8-10"> 8h - 10h</label><br>
+                              <input type="checkbox" id="case2" name="case2" value="10-12">
+                              <label for="10-12"> 10h - 12h</label><br>
+                              <input type="checkbox" id="case3" name="case3" value="14-16">
+                              <label for="14-16"> 14h - 16h</label><br>
+                              <input type="checkbox" id="case4" name="case4" value="16-18">
+                              <label for="16-18"> 16h - 18h</label><br>
+                              <input type="checkbox" id="case5" name="case5" value="18-20">
+                              <label for="18-20"> 18h - 20h</label><br>
+                            </div>
 
-							<div data-role="fieldcontain" class="ui-hide-label">
-								<strong><label for="country">Country of residency:</label></strong>
-								<input type="text" name="country" id="country" value="" placeholder="" />
-							</div>
+                            <div data-role="fieldcontain" class="ui-hide-label">
+                                <strong><label for="country">Country of residency:</label></strong>
+                                <input type="text" name="country" id="country" value="" placeholder="" />
+                            </div>
 
-						<center><button onclick='insertData()' id='submit'>Register</button></center><br>
-					
-					</form>
+                        <center><button onclick='insertData()' id='submit'>Register</button></center><br>
+                    
+                    </form>
 
-					<ul id='list'></ul>
+                    <ul id='list'></ul>
 
-				</div> <!-- content close -->
+                </div> <!-- content close -->
         </div> <!-- registerPage close -->
      </div> <!-- container close -->
     
@@ -140,7 +138,8 @@
     </div>
     
     <script type="text/javascript" src="cordova.js"></script>
- 	<script src="js/jquery.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/owl.carousel.js"></script>
       
  </body>
-</html>
+ </html>

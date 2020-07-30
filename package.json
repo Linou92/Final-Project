@@ -1,13 +1,4 @@
 {
-  "name": "skotutoringapp",
-  "version": "1.0.0",
-  "description": "A PhoneGap Hello World template",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
     "cordova-plugin-battery-status": "~1.1.1",
     "cordova-plugin-camera": "~2.1.1",
@@ -53,22 +44,15 @@
       "cordova-plugin-vibration": {},
       "cordova-plugin-whitelist": {},
       "cordova-plugin-x-socialsharing": {},
-      "cordova-sqlite-storage": {},
-      "cordova-plugin-datetime-picker": {},
-      "nl.moreapps.datepicker": {}
+      "cordova-sqlite-storage": {}
     },
     "platforms": [
       "browser"
     ]
   },
   "dependencies": {
-    "cordova": "^9.0.0",
     "cordova-browser": "^6.0.0",
-    "cordova-plugin-datetime-picker": "git+https://github.com/leecrossley/cordova-plugin-datetime-picker.git",
     "cordova-plugin-sqlite": "^1.0.3",
-    "cordova-sqlite-storage": "^4.0.0",
-    "nl.moreapps.datepicker": "git+https://github.com/DURK/cordova-datepicker-plugin.git",
-    "jquery": "^3.5.1",
-    "sqlite": "^4.0.12"
+    "cordova-sqlite-storage": "^4.0.0"
   }
 }
