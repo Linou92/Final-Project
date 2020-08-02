@@ -126,7 +126,60 @@
                     
                     </form>
 
-                    <ul id='list'></ul>
+                    <script type="text/javascript">
+
+                      var db = window.openDatabase("tutorialdb", "1.0", "tutorial database", 1000000); 
+
+                      document.addEventListener("deviceready", onDeviceReady, false);
+                       
+                      function onDeviceReady() {
+
+                         // Create Table
+                          db.transaction(populateDB, errorCB, successCB);
+
+                         // Select records
+                          fetchData();
+                      }
+
+                      function populateDB(tx){
+
+                         tx.executeSql('CREATE TABLE IF NOT EXISTS teachers (id INTEGER PRIMARY KEY AUTOINCREMENT,username TEXT NOT NULL, password TEXT NOT NULL, passwordConf TEXT NOT NULL, country TEXT NOT NULL)');
+                      }
+
+                        // Fetch all records
+                      function fetchData(){
+                          db.transaction(function(tx){
+                       
+                              tx.executeSql("select * from teachers")
+                          }, errorCB, successCB);
+                      }
+                       
+                      function insertData(){
+
+                         // Insert record
+                          db.transaction(insertUser, errorCB, successCB);
+                          alert("You are now registered. We are happy to welcome you in the family !");
+                          window.location="loginT.html";
+                      }
+
+                      function insertUser(tx){
+                          var username = document.getElementById('username').value;
+                          var password = document.getElementById('password').value;
+                          var passwordConf = document.getElementById('passwordConf').value;
+                          var country = document.getElementById('country').value;
+                       
+                         // Insert query
+                          tx.executeSql("INSERT INTO teachers(username, password, passwordConf, country) VALUES (?,?,?,?)",[username, password, passwordConf, country]);
+                      }
+
+                      function errorCB(err) {
+                          alert("Error processing SQL: "+err.code + err.message);
+                      }
+
+                      function successCB() {
+              
+                      }
+                </script>
 
                 </div> <!-- content close -->
         </div> <!-- registerPage close -->
