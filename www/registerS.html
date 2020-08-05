@@ -27,7 +27,7 @@
                   
             <div data-role="content">   
 
-                <form id="registerForm">
+                <form id="registerForm" action="loginS.html">
                 <div data-role="fieldcontain" class="ui-hide-label">
                     <strong><label for="username" >Username:</label></strong>
                     <input type="text" id="username" placeholder="Username" />
@@ -49,62 +49,9 @@
                         <input type="text" id="country"/>
                     </div><br>
 
-                <center><button onclick='insertData()' id='submit'>Register</button></center><br>
+                <center><button onclick='insertDataS()' id='submit'>Register</button></center><br>
                 
                 </form>
-
-                <script type="text/javascript">
-
-                    var db = window.openDatabase("tutorialdb", "1.0", "tutorial database", 1000000); //will 
-                    document.addEventListener("deviceready", onDeviceReady, false);
-                     
-                    function onDeviceReady() {
-
-                       // Create Table
-                        db.transaction(populateDB, errorCB, successCB);
-
-                       // Select records
-                        fetchData();
-                    }
-
-                    function populateDB(tx){
-                       tx.executeSql('CREATE TABLE IF NOT EXISTS students (id INTEGER PRIMARY KEY AUTOINCREMENT,username TEXT NOT NULL, password TEXT NOT NULL, passwordConf TEXT NOT NULL, country TEXT NOT NULL)');
-                    }
-
-                      // Fetch all records
-                    function fetchData(){
-                        db.transaction(function(tx){
-                     
-                            tx.executeSql("select * from students")
-                        }, errorCB, successCB);
-                    }
-                     
-                    function insertData(){
-
-                       // Insert record
-                        db.transaction(insertUser, errorCB, successCB);
-                        alert("You are now registered. We are happy to welcome you in the family !");
-                        window.location="loginS.html";
-                    }
-
-                    function insertUser(tx){
-                        var username = document.getElementById('username').value;
-                        var password = document.getElementById('password').value;
-                        var passwordConf = document.getElementById('passwordConf').value;
-                        var country = document.getElementById('country').value;
-                     
-                       // Insert query
-                        tx.executeSql("INSERT INTO students(username, password, passwordConf, country) VALUES (?,?,?,?)",[username, password, passwordConf, country]);
-                    }
-
-                    function errorCB(err) {
-                        alert("Error processing SQL: "+err.code + err.message);
-                    }
-
-                    function successCB() {
-            
-                    }
-                </script>
 
             </div> <!-- content close -->
         </div> <!-- app close -->
@@ -118,6 +65,7 @@
     <script type="text/javascript" src="js/cordova.js"></script>
     <script src="js/jquery.min.js"></script>
     <script src="js/owl.carousel.js"></script>
+    <script src="js/db.js"></script>
       
  </body>
  </html>

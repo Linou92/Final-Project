@@ -27,7 +27,7 @@
                   
             <div data-role="content">   
 
-                <form id="registerForm">
+                <form id="registerForm" action="loginS.html">
                 <div data-role="fieldcontain" class="ui-hide-label">
                     <strong><label for="username" >Username:</label></strong>
                     <input type="text" id="username" placeholder="Username" />
@@ -55,7 +55,7 @@
 
                 <script type="text/javascript">
 
-                    var db = window.openDatabase("tutorialdb", "1.0", "tutorial database", 1000000); //will 
+                    var db = window.openDatabase("test", "1.0", "tutorial database", 1000000); //will 
                     document.addEventListener("deviceready", onDeviceReady, false);
                      
                     function onDeviceReady() {
@@ -84,7 +84,6 @@
                        // Insert record
                         db.transaction(insertUser, errorCB, successCB);
                         alert("You are now registered. We are happy to welcome you in the family !");
-                        window.location="loginS.html";
                     }
 
                     function insertUser(tx){

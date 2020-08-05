@@ -11,6 +11,9 @@
      <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
      <link rel="stylesheet" type="text/css" href="css/style.css">
      <link rel="stylesheet" href="css/owl.carousel.min.css">
+     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+     <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
  </head>
 
 <body>
@@ -62,58 +65,58 @@
 
                         <div data-role="fieldcontain" class="ui-hide-label">
                                 <strong>Select your teaching subjects:</strong><br>
-                                <input type="checkbox" id="math" name="math" value="Math">
+                                <input type="checkbox" id="math" name="check1" value="Math">
                               <label for="math"> Math</label><br>
-                              <input type="checkbox" id="physics" name="physics" value="Physics">
+                              <input type="checkbox" id="physics" name="check1" value="Physics">
                               <label for="physics"> Physics</label><br>
-                              <input type="checkbox" id="chemistry" name="chemistry" value="Chemistry">
+                              <input type="checkbox" id="chemistry" name="check1" value="Chemistry">
                               <label for="chemistry"> Chemistry</label><br>
-                              <input type="checkbox" id="history" name="history" value="History">
+                              <input type="checkbox" id="history" name="check1" value="History">
                               <label for="history"> History</label><br>
-                              <input type="checkbox" id="geography" name="geography" value="Geography">
+                              <input type="checkbox" id="geography" name="check1" value="Geography">
                               <label for="geography"> Geography</label><br>
-                              <input type="checkbox" id="biology" name="biology" value="Biology">
+                              <input type="checkbox" id="biology" name="check1" value="Biology">
                               <label for="biology"> Biology</label><br>
-                              <input type="checkbox" id="phylosophy" name="phylosophy" value="Phylosophy">
+                              <input type="checkbox" id="philosophy" name="check1" value="Philosophy">
                               <label for="phylosophy"> Philosophy</label><br>
-                              <input type="checkbox" id="english1" name="english1" value="English">
+                              <input type="checkbox" id="english1" name="check1" value="English">
                               <label for="english"> English</label><br>
-                              <input type="checkbox" id="french1" name="french1" value="French">
+                              <input type="checkbox" id="french1" name="check1" value="French">
                               <label for="french"> French</label><br>
-                              <input type="checkbox" id="spanish1" name="spanish1" value="Spanish">
+                              <input type="checkbox" id="spanish1" name="check1" value="Spanish">
                               <label for="spanish"> Spanish</label><br>
-                              <input type="checkbox" id="german1" name="german1" value="German">
+                              <input type="checkbox" id="german1" name="check1" value="German">
                               <label for="german"> German</label><br>
-                              <input type="checkbox" id="swedish1" name="swedish1" value="Swedish">
+                              <input type="checkbox" id="swedish1" name="check1" value="Swedish">
                               <label for="swedish"> Swedish</label><br>
-                              <input type="checkbox" id="arabic1" name="arabic1" value="Arabic">
+                              <input type="checkbox" id="arabic1" name="check1" value="Arabic">
                               <label for="arabic"> Arabic</label><br>
-                              <input type="checkbox" id="italian1" name="italian1" value="Italian">
+                              <input type="checkbox" id="italian1" name="check1" value="Italian">
                               <label for="italian"> Italian</label><br>
                             </div>
 
                             <div data-role="fieldcontain" class="ui-hide-label">
                                 <strong>Select your teaching level:</strong><br>
-                                <input type="checkbox" id="ten" name="ten" value="Ten">
+                                <input type="checkbox" id="ten" name="check2" value="10th grade">
                               <label for="ten"> 10th grade</label><br>
-                              <input type="checkbox" id="eleven" name="eleven" value="Eleven">
+                              <input type="checkbox" id="eleven" name="check2" value="11th grade">
                               <label for="eleven"> 11th grade</label><br>
-                              <input type="checkbox" id="twelve" name="twelve" value="twelve">
+                              <input type="checkbox" id="twelve" name="check2" value="12th grade">
                               <label for="twelve"> 12th grade</label><br>
                             </div>
 
 
                             <div data-role="fieldcontain" class="ui-hide-label">
                                 <strong>Select your availability:</strong><br>
-                                <input type="checkbox" id="case1" name="case1" value="8-10">
+                                <input type="checkbox" id="case1" name="check3" value="8-10">
                               <label for="8-10"> 8h - 10h</label><br>
-                              <input type="checkbox" id="case2" name="case2" value="10-12">
+                              <input type="checkbox" id="case2" name="check3" value="10-12">
                               <label for="10-12"> 10h - 12h</label><br>
-                              <input type="checkbox" id="case3" name="case3" value="14-16">
+                              <input type="checkbox" id="case3" name="check3" value="14-16">
                               <label for="14-16"> 14h - 16h</label><br>
-                              <input type="checkbox" id="case4" name="case4" value="16-18">
+                              <input type="checkbox" id="case4" name="check3" value="16-18">
                               <label for="16-18"> 16h - 18h</label><br>
-                              <input type="checkbox" id="case5" name="case5" value="18-20">
+                              <input type="checkbox" id="case5" name="check3" value="18-20">
                               <label for="18-20"> 18h - 20h</label><br>
                             </div>
 
@@ -122,64 +125,9 @@
                                 <input type="text" name="country" id="country" value="" placeholder="" />
                             </div>
 
-                        <center><button onclick='insertData()' id='submit'>Register</button></center><br>
+                        <center><button type="submit" onclick='insertDataT()' id='submit'>Register</button></center><br>
                     
                     </form>
-
-                    <script type="text/javascript">
-
-                      var db = window.openDatabase("tutorialdb", "1.0", "tutorial database", 1000000); 
-
-                      document.addEventListener("deviceready", onDeviceReady, false);
-                       
-                      function onDeviceReady() {
-
-                         // Create Table
-                          db.transaction(populateDB, errorCB, successCB);
-
-                         // Select records
-                          fetchData();
-                      }
-
-                      function populateDB(tx){
-
-                         tx.executeSql('CREATE TABLE IF NOT EXISTS teachers (id INTEGER PRIMARY KEY AUTOINCREMENT,username TEXT NOT NULL, password TEXT NOT NULL, passwordConf TEXT NOT NULL, country TEXT NOT NULL)');
-                      }
-
-                        // Fetch all records
-                      function fetchData(){
-                          db.transaction(function(tx){
-                       
-                              tx.executeSql("select * from teachers")
-                          }, errorCB, successCB);
-                      }
-                       
-                      function insertData(){
-
-                         // Insert record
-                          db.transaction(insertUser, errorCB, successCB);
-                          alert("You are now registered. We are happy to welcome you in the family !");
-                          window.location="loginT.html";
-                      }
-
-                      function insertUser(tx){
-                          var username = document.getElementById('username').value;
-                          var password = document.getElementById('password').value;
-                          var passwordConf = document.getElementById('passwordConf').value;
-                          var country = document.getElementById('country').value;
-                       
-                         // Insert query
-                          tx.executeSql("INSERT INTO teachers(username, password, passwordConf, country) VALUES (?,?,?,?)",[username, password, passwordConf, country]);
-                      }
-
-                      function errorCB(err) {
-                          alert("Error processing SQL: "+err.code + err.message);
-                      }
-
-                      function successCB() {
-              
-                      }
-                </script>
 
                 </div> <!-- content close -->
         </div> <!-- registerPage close -->
@@ -193,6 +141,7 @@
     <script type="text/javascript" src="cordova.js"></script>
     <script src="js/jquery.min.js"></script>
     <script src="js/owl.carousel.js"></script>
+    <script src="js/db.js"></script>
       
  </body>
  </html>
